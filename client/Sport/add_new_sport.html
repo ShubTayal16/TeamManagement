@@ -1,0 +1,49 @@
+<template name="addNewSport">
+    <div class="controls">
+            <select class="form-control-static gameCat" name="sportCat">
+                <option value="0">--Select--</option>
+                <option value="1">Cricket</option>
+                <option value="2">Football</option>
+                <option value="3">Basketball</option>
+                <option value="4">Hockey</option>
+                <option value="5">Volleyball</option>
+            </select>
+            
+<!-- 
+            {{#if equals val 1}}
+                {{> cricket}}
+            {{/if}}
+            {{#if equals val 2}}
+                {{> football}}
+            {{/if}}
+            {{#if equals val 3}}
+                {{> basketball}}
+            {{/if}}
+            {{#if equals val 4}}
+                {{> hockey}}
+            {{/if}}
+            {{#if equals val 5}}
+                {{> volleyball}}            
+            {{/if}}
+           -->
+            
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="experience">Experience</label>
+            <div class="controls">
+                <input type="text" id="experience" name="experience" placeholder="since how long you are playing (in yrs)" class="form-control" value=""/>                
+            </div>
+        </div>
+         <div class=form-group>
+            <label class="control-label" for="achievements">About Your Game</label>
+            <textarea class="form-control" name="aboutGame" id="achievements" placeholder="Please provide a brief description about your sport,which position you prefer playing, etc"></textarea>
+        </div>
+        <div class=form-group>
+                <label class="control-label" for="achievements">Achievements</label>
+            <textarea class="form-control" name="achievement" id="achievements" placeholder="About your sport"></textarea>
+        </div>
+        <div class="form-group">
+                <label form-control for="rating">Rate yourself</label>
+            {{> starsRating id='rating' mutable=true size='lg'}}
+        </div> 
+</template>

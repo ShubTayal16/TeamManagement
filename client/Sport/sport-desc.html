@@ -1,0 +1,89 @@
+<!-- <template name="cricket">
+    <div class="form-group">
+            <label class="checkbox-inline" >
+            <input type="checkbox" id="cricket" name="cricket" value="batting"/>Batting 
+            </label>
+            <label class="checkbox-inline" >
+            <input type="checkbox" id="cricket" name="cricket" value="balling"/>Balling 
+            </label>
+            <label class="checkbox-inline" >
+            <input type="checkbox" id="cricket" name="cricket" value="keeping"/>Keeping 
+            </label>
+        </div>
+        {{> commonField}}
+</template>
+
+<template name="football">
+        <div class="form-group">
+          <label class="control-label" for="position">Position</label>
+          <select class="form-control">
+              <option>Forward</option>
+              <option>Mid Fielder</option>
+              <option>Defense</option>
+              <option>Goalkeeper</option>
+          </select>
+        {{> commonField}}
+        </div>
+</template>
+
+<template name="volleyball">
+    <div class="form-group">
+          <label class="control-label" for="position">Position</label>
+          <select class="form-control">
+              <option>Attack</option>
+              <option>Service</option>
+              <option>Defense(Mid)</option>
+              <option>Libero</option>
+            </select>
+    </div>
+    {{> commonField}}
+</template>
+
+<template name="basketball">
+        <div class="form-group">
+            <label class="control-label" for="position">Position</label>
+            <select class="form-control">
+                    <option>Point Guard</option>
+                    <option>Shooting Gaurd</option>
+                    <option>Slow Forward</option>
+                    <option>Power Forward</option>
+                    <option>Center</option>
+            </select>
+              {{> commonField}}
+        </div>
+</template>
+
+<template name="hockey">
+        <div class="form-group">
+            <label class="control-label" for="position">Position</label>
+            <select class="form-control">
+                    <option>Forward</option>
+                    <option>Mid Fielder</option>
+                    <option>Defense</option>
+                    <option>Goalkeeper</option>
+                </select>
+              {{> commonField}}
+        </div>
+</template>
+ -->
+
+<template name="commonField">
+    <div class="form-group">
+        <label class="control-label" for="experience">Experience</label>
+        <div class="controls">
+            <input type="text" id="experience" name="experience" placeholder="since how long you are playing (in yrs)" class="form-control" value=""/>                
+        </div>
+    </div>
+     <div class=form-group>
+        <label class="control-label" for="achievements">About Your Game</label>
+        <textarea class="form-control" id="achievements" placeholder="Please provide a brief description about your sport,which position you prefer playing, etc"></textarea>
+    </div>
+    <div class=form-group>
+            <label class="control-label" for="achievements">Achievements</label>
+        <textarea class="form-control" id="achievements" placeholder="About your sport"></textarea>
+    </div>
+    <div class="form-group">
+            <label form-control for="rating">Rate yourself</label>
+        {{> starsRating id='rating' mutable=true size='lg'}}
+    </div> 
+</template>

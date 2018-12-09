@@ -1,0 +1,75 @@
+<template name="playerRegPage">
+    <div>
+    
+    <form class="main form page">
+            <h4>Player Registration</h4>
+        <div class="form-group">
+            <label class="control-label" for="name">Name</label>
+            <div class="controls">
+            <input type="text" id="name" name="name" placeholder="Name" class="form-control" value=""/>                
+            </div>
+        </div>
+
+        <div class="form-group">
+                <label class="control-label" for="dob">Date Of Birth</label>
+                <div class="controls">
+                <input type="date" id="dob" name="dob" placeholder="Date of birth" class="form-control" value=""/>                
+                </div>
+            </div>
+
+        <div class="form-group">
+          
+
+            <label class="control-label" for="gender">Gender</label>
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;
+            <label class="radio-inline" >
+            <input type="radio" id="gender" name="gender" value="Male" checked/>Male 
+            </label>
+            <label class="radio-inline">
+            <input type="radio" id="gender" name="gender"  value="Female"/>Female              
+            </label>
+        </div>
+
+        <div class="form-group">
+                <label class="control-label" for="height">Height</label>
+                <div class="controls">
+                <input type="text" id="height" name="height" placeholder="Height(in cms)" class="form-control" value=""/>                
+                </div>
+            </div>
+        <div class="form-group">
+                <label class="control-label" for="weight">Weight</label>
+                <div class="controls">
+                <input type="text" id="weight" name="weigth" placeholder="weight" class="form-control" value=""/>                
+                </div>
+            </div>
+
+            <div class="form-group">
+                    <label class="control-label" for="address">Address</label>
+                    <div class="controls">
+                     <textarea rows="3" name="address" id="address" placeholder="Address" class="form-control"></textarea>   
+                    </div>
+                </div>
+            <div class="form-group">
+                <label class="control-label" for="contactNo">Contact No.</label>
+                <div class="controls">
+                <input type="text" id="contactNo" name="contactNo" placeholder="Mobile No." class="form-control" value=""/>                
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="sportsCat">Choose Sports Category</label>   
+                {{> addNewSport}}
+                {{# each addSport}} 
+                    {{> addNewSport}}
+                {{/each}}
+                <div style="float:right">      
+                        <button class="btn btn-secondary add" type="button">Add another sport</button>
+                </div>
+            </div>
+              <br/>
+              <br/>  
+            <button class="btn btn-primary form-control" type="submit" value="submit">Register</button>
+    </form>
+    </div>
+</template>
