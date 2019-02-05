@@ -1,6 +1,8 @@
+ //sports=[];
+ 
  Template.playerRegPage.helpers({
    addSport:function(){
-       return Sports.find();
+       return Sports.find({isClicked:true});
    }
 
  });
@@ -8,18 +10,32 @@
 
 Template.playerRegPage.events({
    
-    'click .add': function(){
-        Sports.insert({isClicked:true});       
+    'click #addGame': function(eve){
+        eve.preventDefault();
+        var sportPlayed={
+            isClicked:true,
+            sports:[
+                {
+                sportCat: $(".gameCat").val(),
+                experience: $("#experience").val(),                
+                aboutGame:$("#aboutGame").val(),
+                achievement:$("#achievements").val(),
+                rating: $('#rating').data('userrating')
+            }
+            ]
+        }
+        Sports.insert(sportPlayed); 
+        console.log($(eve.target).find('[name=experience]').val());     
         },
 
     'submit form':function(e){
-        event.preventDefault();
+        e.preventDefault();
 
-        var sports=[
-            {
-                sportCat:$(e.target)
-            }
-        ]
+        // var sports=[
+        //     {
+        //         sportCat:$(e.target)
+        //     }
+        // ]
         var player={
             name : $(e.target).find('[name=name]').val(),
             dob : $(e.target).find('[name=dob]').val(),
@@ -29,20 +45,24 @@ Template.playerRegPage.events({
             address : $(e.target).find('[name=address]').val(),
             contactNo : $(e.target).find('[name=contactNo]').val(),
         };
-        player._id=Players.insert(player);
+        Players.insert(player);
 
-        for(var i=0;i<Sports.find().count()+1;i++){
-            var spor={
-                playerId:player._id,
-                sportCat: $(e.target).find('[name=sportCat]').val(),
-                experience: $(e.target).find('[name=experience]').val(),
-                aboutGame:$(e.target).find('[name=aboutGame]').val(),
-                achievement:$(e.target).find('[name=achievement]').val(),
-                rating: $('#rating').data('userrating')
-            };
-            spor._id=PlayerSports.insert(spor);
-        }
+        
+        //     var spor=[
+        //         {
+                   
+        //         playerId:player._id,
+        //         sportCat: $(e.target).find('[name=sportCat]').val(),
+        //         experience: $(e.target).find('[name=experience]').val(),
+        //         aboutGame:$(e.target).find('[name=aboutGame]').val(),
+        //         achievement:$(e.target).find('[name=achievement]').val(),
+        //         rating: $('#rating').data('userrating')
+        //     }
+        
 
+        // ];
+            //PlayerSports.insert(spor);
+        Router.go('/AddSuccess')
     }
 });
 

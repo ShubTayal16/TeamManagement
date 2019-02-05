@@ -1,2 +1,2 @@
 # TeamManagement
-Sports team management application
+Sprots team management application
