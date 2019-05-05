@@ -1,0 +1,45 @@
+<template name="playerPage">
+    <div class="card">
+        <h5 class="card-header info-color white-text text-center py-3">
+            <strong>Player Details</strong>
+        </h5>
+        <div class="card-body px-lg-5 pt-0">
+        <form style="color: #757575;">
+        <div class="md-form mb-2">
+            <label for="name">Name</label>            
+            <input type="text" id="name" name="name" class="form-control" value=""/>                
+        </div>
+
+        <div class="md-form mb-2" >
+                <label for="dob">Date Of Birth</label>                
+            <input type="text" id="dob" name="dob" class="form-control" value=""/>                
+            </div>
+        <div class="text-left mb-2">
+                <label for="gender">Gender</label>  &nbsp;&nbsp;&nbsp;              
+                <input type="radio" id="gender" name="gender" value="Male"> Male &nbsp;&nbsp;&nbsp;&nbsp;    
+                <input type="radio" id="gender" name="gender" value="Female"> Female
+        </div>
+                <div class="md-form mb-2">
+                    <label for="height">Height</label>        
+                    <input type="text" id="height" name="height" class="form-control" value=""/>                
+            </div>
+        <div class="md-form mb-2">   
+                <label for="weight">Weight</label>
+            <input type="text" id="weight" name="weight"  class="form-control" value=""/>                
+            </div>
+
+        <div class="md-form mb-2">
+                <label for="address">Address</label>
+            <textarea rows="3" name="address" id="address" class="form-control"></textarea>   
+
+            </div>
+        <div class="md-form mb-2">
+                <label for="contactNo">Contact No.</label>                
+
+            <input type="text" id="contactNo" name="contactNo" class="form-control" value=""/>                
+        </div>
+        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" style="float:right" type="submit">Next</button>           
+    </form>
+    </div>
+    </div>
+</template>

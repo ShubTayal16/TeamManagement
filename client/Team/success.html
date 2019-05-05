@@ -1,0 +1,31 @@
+<template name="success">
+    <h6>Player added successfully</h6>
+    <!-- {{> reactiveTable settings=settings}} -->
+    <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+             <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Height</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Contact No.</th>
+                <th scope="col">Sports</th>
+                <th scope="col">About Game</th>
+              </tr>
+            </thead>
+            <tbody >
+              {{#each playerDetails}}
+              <tr>
+                <td>{{playerss.name}}</td>
+                <td>{{playerss.gender}}</td>
+                <td>{{playerss.height}}</td>
+                <td>{{playerss.weight}}</td>                
+                <td>{{playerss.contactNo}}</td>
+                <td>{{sportCat}}</td>
+                <td>{{aboutGame}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" id="selectTeam">Select Team</button>    
+</template>

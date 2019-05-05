@@ -1,0 +1,43 @@
+<template name="sports">
+    <div class="card">
+        <h5 class="card-header info-color white-text text-center py-3">
+            <strong>Sports Details</strong>
+        </h5>
+    <div class="card-body px-lg-5 pt-0">
+    <form style="color: #757575;">
+        <div>
+    <label>Sports Category</label>
+    <select class="dropdown-primary gameCat mb-2 form-control" name="sportCat"> 
+        <option value="">--Select--</option>
+        <option value="Cricket">Cricket</option>
+        <option value="Football">Football</option>
+        <option value="Basketball">Basketball</option>
+        <option value="Hockey">Hockey</option>
+        <option value="Volleyball">Volleyball</option>
+    </select>
+
+</div>
+    <div class="md-form mb-3">
+            <label for="experience">Experience</label>
+        <input type="text" id="experience" name="experience" class="form-control experience" value=""/>           
+    </div>
+    <div class="md-form mb-3">
+            <label for="achievements">About Your Game(Playing style,positions, speciality)</label>        
+        <textarea class="form-control" name="aboutGame" id="aboutGame"></textarea>
+    </div>
+    <div class="md-form mb-3">
+            <label class="control-label" for="achievements">Achievements</label>
+        <textarea class="form-control" name="achievement" id="achievements"></textarea>
+    </div>
+    <!-- <div>
+            <label form-control for="rating">Rate yourself</label>
+        {{> starsRating id='rating' mutable=true size='lg'}}
+    </div> -->
+    <div style="float:right">      
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" id="addGame">Add sport</button>
+    </div>
+    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0">Register</button>
+    </form>
+    </div>
+    </div>
+</template>
