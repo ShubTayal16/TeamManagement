@@ -1,16 +1,14 @@
-// Template.registration.onCreated(function(){
-//     var arr=[];
-//     this.playersSeleted = new ReactiveVar(arr);
-// });
+import { ReactiveVar } from 'meteor/reactive-var';
+Template.registration.onCreated(function(){
+    this.showPlayers = new ReactiveVar("");
+    this.showAll = new ReactiveArray();
+});
 
 Template.registration.helpers({
     registerTeam: function(){
-    //var gameFilter= new ReactiveTable.Filter("sportsFillter",["sportCat"]);
-
-        return{
+            return{
         collection: SportsColl,
         showFilter: false,
-        //filter:gameFilter,
         fields: [
             {key:'playerss.name', label:'Player Name'},
             {key:'playerss.gender', label:'Player Name'},
@@ -23,21 +21,29 @@ Template.registration.helpers({
 
     },
 
+    showAllPlayers:function(){
+        return Template.instance().showAll.get();
+    },
+
     // showPlayers: function(){
-    //     return Teams.find({},{"players":1});
+    // //     return Teams.find({},{"players":1});
+    //       return Template.instance().showPlayers.get();
     // }
 });
 
 Template.registration.events({
-    'click .reactive-table tbody tr':function(e){
+    'click .reactive-table tbody tr':function(e,template){
         var player=this;
         Teams.update(
             {_id:Session.get('teamId')},
             {$push:{players:player}}
         );
-    //     arr.push(player.playerss.name);
-    //     template.playersSeleted.set(arr);
-    //    Session.set('playrDet',player.playerss.name);
+         template.showAll.push(player);    
+       //template.showPlayers.set(player.playerss.name);
+    },
+
+    'click #showTeam':function(eve){
+        Router.go('/ViewAllTeams');
     },
 
     'submit form':function(event){

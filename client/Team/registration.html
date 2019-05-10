@@ -21,18 +21,18 @@
                     <option value="Volleyball">Volleyball</option>
                 </select>
 
-                <!-- {{> gameFilter id='game-filter' label='Sports1'}} -->
+                
         <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" style="float:right" type="submit">Add Players</button>           
-                <!-- <div>
-                    <table>
-                        <th>Players</th>
-                        {{#each showPlayers}}
-                        <tr> {{> playerss.name }}</tr>
-                        {{/each}}
-                   
-                    </table>
-                </div> -->
+        <div class="md-form mb-2">
+                <label for="players">Selected Players</label> 
+                <ol>
+                {{#each sportsmen in showAllPlayers}}
+                    <li> {{sportsmen.playerss.name}}</li>
+                {{/each}}
+                </ol>                
+        </div>
             </form>
+        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" style="float:right" id="showTeam" type="button">View All Teams</button>           
         </div>
     </div>
 </template>

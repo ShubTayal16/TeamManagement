@@ -1,0 +1,25 @@
+<template name="allTeams">
+    {{#each teams}}
+    {{> teamsCreated}}
+    {{/each}}
+
+</template>
+
+<template name="teamsCreated">
+        <div class="team">
+            <div>
+            Team Name: {{teamName}}
+            </div>
+            <div>
+            Sports: {{sports}}
+            </div>
+            <div>
+            Selected Players: 
+                    <ol>
+                    {{#each sportsmen in players}}
+                        <li> {{sportsmen.playerss.name}}</li>
+                    {{/each}}
+                    </ol>                
+            </div>
+        </div>
+</template>
